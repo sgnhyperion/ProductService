@@ -1,4 +1,4 @@
-package com.harshproductservice.productservice;
+ package com.harshproductservice.productservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
