@@ -27,5 +27,10 @@ public class ProductController{
     public Product getProductById(@PathVariable("id") Long id){
         return this.productService.getProductById(id);
     }
+
+    @GetMapping()
+    public Product[] getAllProducts(){
+        return this.productService.getAllProducts();
+    }
     
 }
