@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.harshproductservice.productservice.DTO.FakestoreProductDTO;
+import com.harshproductservice.productservice.Exceptions.ProductNotFoundException;
 import com.harshproductservice.productservice.model.Category;
 import com.harshproductservice.productservice.model.Product;
 
@@ -18,7 +19,7 @@ public class FakestoreProductService implements ProductService{
         FakestoreProductDTO fakestoreproductdto = restTemplate.getForObject("https://fakestoreapi.com/products/"+id,FakestoreProductDTO.class);
 
         if (fakestoreproductdto == null) {
-            return null;
+            throw new ProductNotFoundException(id, "Please Enter a valid Product");
         }
 
         return convertFakestoreProductdtoToProduct(fakestoreproductdto);
