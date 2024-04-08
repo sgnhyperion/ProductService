@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 @RequestMapping("/products")
 public class ProductController{
-    ProductService productService;
+    private ProductService productService;
 
-    ProductController(FakestoreProductService fakestoreProductService){
+    ProductController(ProductService productService){
         this.productService = productService;
     }
 
     @GetMapping("/{id}")
     public Product getProductById(@PathVariable("id") Long id){
-        return productService.getProductById(id);
+        return this.productService.getProductById(id);
     }
     
 }

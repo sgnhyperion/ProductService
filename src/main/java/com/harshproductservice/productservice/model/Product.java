@@ -1,6 +1,5 @@
 package com.harshproductservice.productservice.model;
-
-import java.util.Locale.Category;
+import com.harshproductservice.productservice.model.Category;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
